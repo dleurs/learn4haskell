@@ -493,7 +493,7 @@ lastDigit
   results. Or you can try to guess the function name, search for it and check
   whether it works for you!
 -}
--- DON'T FORGET TO SPECIFY THE TYPE IN HERE
+lastDigit :: Int -> Int
 lastDigit n = mod n 10
 
 
@@ -646,7 +646,11 @@ Try to introduce variables in this task (either with let-in or where) to avoid
 specifying complex expressions.
 -}
 
-sumLast2 n = error "sumLast2: Not implemented!"
+sumLast2 :: Int -> Int
+sumLast2 n = 
+  let last = mod n 10
+      lastButOne = mod (div n 10) 10
+  in (last + lastButOne)
 
 
 {- |
